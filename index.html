@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    
+    <!-- Подключаем красивые шрифты от Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- НАСТРОЙКИ СТИЛЯ (CSS) --- */
+        :root {
+            --primary-color: #B08E85; /* Пыльная роза */
+            --bg-color: #FAF7F2;      /* Кремовый фон */
+            --text-color: #4A4A4A;    /* Темно-серый текст */
+            --accent-light: #E8E1DA;  /* Светлый беж */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .cursive {
+            font-family: 'Great Vibes', cursive;
+            color: var(--primary-color);
+        }
+
+        /* --- ГЛАВНЫЙ ЭКРАН --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .date-badge {
+            margin-top: 30px;
+            border: 1px solid #fff;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* --- СЕКЦИИ --- */
+        .section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .couple-names {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background-color: var(--primary-color);
+            margin: 20px auto;
+        }
+
+        /* --- ПРОГРАММА ДНЯ (Таймлайн) --- */
+        .timeline {
+            margin-top: 40px;
+        }
+
+        .event {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--accent-light);
+        }
+
+        .event-time {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* --- ФОРМА --- */
+        .rsvp-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            background-color: #FCFCFC;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #9A7A72;
+            transform: translateY(-2px);
+        }
+
+        /* --- ФУТЕР --- */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        /* --- АДАПТИВ ДЛЯ МОБИЛОК --- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.5rem; }
+            .couple-names { font-size: 2rem; }
+            .rsvp-form { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ГЛАВНЫЙ БЛОК -->
+    <section class="hero">
+        <div class="cursive" style="font-size: 2rem; color: #fff; margin-bottom: 10px;">Save the Date</div>
+        <!-- ВСТАВЬ СЮДА ВАШИ ИМЕНА -->
+        <h1>Александр & Мария</h1> 
+        <div class="date-badge">
+            <!-- ВСТАВЬ ДАТУ -->
+            25 АВГУСТА 2024
+        </div>
+    </section>
+
+    <!-- ПРИГЛАШЕНИЕ -->
+    <section class="section">
+        <h2 class="couple-names cursive">Дорогие друзья и родные!</h2>
+        <p>Мы будем рады разделить с вами этот особенный день.</p>
+        <p>Пожалуйста, отложите все дела и присоединяйтесь к нашему празднику любви!</p>
+        <div class="divider"></div>
+    </section>
+
+    <!-- ПРОГРАММА -->
+    <section class="section" style="background-color: #F2EFE9;">
+        <h2>Программа дня</h2>
+        <div class="timeline">
+            <div class="event">
+                <div class="event-time">14:00</div>
+                <h3>Торжественная церемония</h3>
+                <p>Дворец Бракосочетания №1</p>
+                <small>ул. Ленина, д. 1</small>
+            </div>
+            <div class="event">
+                <div class="event-time">16:00</div>
+                <h3>Фотосессия</h3>
+                <p>Прогулка в городском парке</p>
+            </div>
+            <div class="event">
+                <div class="event-time">17:30</div>
+                <h3>Праздничный банкет</h3>
+                <p>Ресторан "Счастье"</p>
+                <small>Набережная, д. 5</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- ДРЕСС-КОД -->
+    <section class="section">
+        <h2>Дресс-код</h2>
+        <p style="margin-top: 15px;">Будем признательны, если вы поддержите цветовую гамму нашей свадьбы:</p>
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+            <!-- Кружочки с цветами -->
+            <div style="width: 40px; height: 40px; background: #B08E85; border-radius: 50%;"></div>
+            <div style="width: 40px; height: 40px; background: #D8C3A5; border-radius: 50%;"></div>
+            <div style="width: 40px; height: 40px; background: #EAE7DC; border-radius: 50%; border: 1px solid #ddd;"></div>
+            <div style="width: 40px; height: 40px; background: #8E8D8A; border-radius: 50%;"></div>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9rem;">Pastel & Cocktail</p>
+    </section>
+
+    <!-- ФОРМА (RSVP) -->
+    <section class="section" id="rsvp">
+        <h2 style="margin-bottom: 20px;">Подтвердите присутствие</h2>
+        <p style="margin-bottom: 30px;">Пожалуйста, заполните форму до 1 августа</p>
+        
+        <div class="rsvp-form">
+	    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScmMdlpqMNOCKEuOLanLtKKcJ-_xqGBmJrOBwmBmFkIYfwOCA/viewform?embedded=true" 		width="640" height="1816" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p class="cursive" style="font-size: 1.5rem;">Александр & Мария</p>
+        <p>Ждем вас!</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+:root {
+    --background-color-1: #faf7f2;
+    --background-color-2: #fff;
+    --background-color-3: #f2efe9;
+    --background-color-4: #b08e85;
+    --text-color-1: #4a4a4a;
+    --text-color-2: #fff;
+    --text-color-3: #b08e85;
+    --border-color-1: #b08e85;
+    --border-color-2: #fff;
+    --dress-code-color-1: #b08e85;
+    --dress-code-color-2: #d8c3a5;
+    --dress-code-color-3: #eae7dc;
+    --dress-code-color-4: #8e8d8a;
+
+    --spacing-05x: 2px;
+    --spacing-1x: 4px;
+    --spacing-2x: 8px;
+    --spacing-3x: 12px;
+    --spacing-4x: 16px;
+    --spacing-5x: 20px;
+
+    --border-width-1x: 1px;
+
+    --border-radius-1x: 4px;
+    --border-radius-2x: 8px;
+    --border-radius-4x: 16px;
+    --border-radius-5x: 20px;
+    --border-radius-full: 9999px;
+
+    --breakpoint-xl: 1920px;
+    --breakpoint-l: 1600px;
+    --breakpoint-m: 1440px;
+    --breakpoint-s: 1200px;
+    --breakpoint-xs: 720px;
+    --breakpoint-2xs: 360px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color-1);
+    color: var(--text-color-1);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+.text_cursive {
+    font-family: 'Great Vibes', cursive;
+    color: var(--text-color-3);
+}
+
+.link_hidden {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН --- */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-5x) / 2);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color-2);
+    padding: var(--spacing-5x);
+}
+
+.hero > .text_cursive {
+    font-size: 2rem;
+    color: inherit;
+}
+
+.hero > h1 {
+    font-size: 4rem;
+    text-shadow: var(--spacing-05x) var(--spacing-05x) var(--spacing-1x) rgba(0, 0, 0, 0.3);
+}
+
+.hero > p {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero > .date {
+    margin-top: calc(var(--spacing-5x) * 1.5);
+    border: var(--border-width-1x) solid var(--border-color-2);
+    padding: calc(var(--spacing-5x) / 2) calc(var(--spacing-5x) * 1.5);
+    font-size: 1.2rem;
+    backdrop-filter: blur(6px);
+}
+
+/* --- СЕКЦИИ --- */
+
+.section {
+    padding: calc(var(--spacing-5x) * 4) var(--spacing-5x);
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coupleNames {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-5x);
+}
+
+.divider {
+    width: 100px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: var(--spacing-5x) auto;
+}
+
+/* --- ПРОГРАММА ДНЯ --- */
+
+.section.programm {
+    background-color: var(--background-color-3);
+}
+
+.timeline {
+    margin-top: calc(var(--spacing-5x) * 2);
+}
+
+.event {
+    background-color: var(--background-color-2);
+    padding: var(--spacing-5x);
+    margin-bottom: var(--spacing-5x);
+    border-radius: var(--border-radius-4x);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: var(--border-width-1x) solid var(--accent-light);
+}
+
+.event-time {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* --- ДРЕСС-КОД --- */
+
+.dressCode > .list {
+    display: flex; 
+    justify-content: center; 
+    gap: var(--spacing-4x); 
+    margin-top: var(--spacing-5x);
+}
+
+.dressCode > .list > .listItem {
+    --list-item-size: 40px;
+
+    width: var(--list-item-size); 
+    height: var(--list-item-size); 
+    border-radius: var(--border-radius-full);
+}
+
+/* --- ФОРМА --- */
+
+.section.form {
+    background: var(--background-color-2);
+    padding: calc(var(--spacing-5x) * 2);
+    border-radius: var(--border-radius-5x);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.section.form > .formContainer > .form {
+    width: 100%;
+    max-height: 100vh;
+    height: 800px;
+}
+
+/* --- ФУТЕР --- */
+
+footer {
+    background-color: var(--background-color-4);
+    color: var(--text-color-2);
+    text-align: center;
+    padding: var(--spacing-5x);
+    font-size: 0.9rem;
+    margin-top: calc(var(--spacing-5x) * 3);
+}
+
+footer > .text_cursive {
+    color: inherit;
+    font-size: 1.5rem;
+}
+
+/* --- АДАПТИВ ДЛЯ МОБИЛОК --- */
+
+@media (1440px <= width < 1920px) {
+    .section {
+        max-width: 1200px;
+    }
+}
+
+@media (720px <= width < 1440px) {
+    .section {
+        max-width: 720px;
+    }
+}
+
+@media (width < 720px) {
+    .section {
+        max-width: 100%;
+    }
+
+    .hero h1 { 
+        font-size: 2.5rem; 
+    }
+
+    .coupleNames { 
+        font-size: 2rem; 
+    }
+
+    .section.form { 
+        padding: var(--spacing-5x); 
+    }
+}

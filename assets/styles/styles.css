@@ -8,10 +8,14 @@
     --text-color-3: #b08e85;
     --border-color-1: #b08e85;
     --border-color-2: #fff;
-    --dress-code-color-1: #b08e85;
-    --dress-code-color-2: #d8c3a5;
-    --dress-code-color-3: #eae7dc;
-    --dress-code-color-4: #8e8d8a;
+    --dress-code-color-1: #755c7c;
+    --dress-code-color-2: #b49bbb;
+    --dress-code-color-3: #8aac91;
+    --dress-code-color-4: #fcc9c6;
+    --dress-code-color-5: #ffede9;
+    --shadow-color-1: rgba(0, 0, 0, 0.2);
+    --shadow-color-2: rgba(0, 0, 0, 0.3);
+    --shadow-color-3: rgba(0, 0, 0, 0.5);
 
     --spacing-05x: 2px;
     --spacing-1x: 4px;
@@ -34,6 +38,8 @@
     --breakpoint-s: 1200px;
     --breakpoint-xs: 720px;
     --breakpoint-2xs: 360px;
+
+    --transition-1: 300ms;
 }
 
 * {
@@ -46,6 +52,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--background-color-1);
     color: var(--text-color-1);
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
@@ -56,7 +63,6 @@ h1, h2, h3 {
 
 .text_cursive {
     font-family: 'Great Vibes', cursive;
-    color: var(--text-color-3);
 }
 
 .link_hidden {
@@ -74,7 +80,7 @@ h1, h2, h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/hero.jpg');
+    background: linear-gradient(var(--shadow-color-1), var(--shadow-color-1)), url('../images/hero.jpg');
     background-size: cover;
     background-position: center;
     color: var(--text-color-2);
@@ -88,7 +94,7 @@ h1, h2, h3 {
 
 .hero > h1 {
     font-size: 4rem;
-    text-shadow: var(--spacing-05x) var(--spacing-05x) var(--spacing-1x) rgba(0, 0, 0, 0.3);
+    text-shadow: var(--spacing-05x) var(--spacing-05x) var(--spacing-1x) var(--shadow-color-2);
 }
 
 .hero > p {
@@ -108,8 +114,8 @@ h1, h2, h3 {
 /* --- СЕКЦИИ --- */
 
 .section {
+    min-height: 100vh;
     padding: calc(var(--spacing-5x) * 4) var(--spacing-5x);
-    max-width: 1440px;
     margin: 0 auto;
     text-align: center;
 }
@@ -122,47 +128,130 @@ h1, h2, h3 {
 .divider {
     width: 100px;
     height: 2px;
-    background-color: var(--primary-color);
-    margin: var(--spacing-5x) auto;
+    background-color: var(--border-color-1);
+    margin: var(--spacing-3x) auto;
+}
+
+/* --- ПРИГЛАШЕНИЕ --- */
+
+.section.invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/flowersFrame.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 
+        inset 0 var(--spacing-5x) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3),
+        inset 0 calc(var(--spacing-5x) * -1) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
+}
+
+.section.invitation > .title {
+    font-size: 4rem;
+    color: var(--text-color-3);
 }
 
 /* --- ПРОГРАММА ДНЯ --- */
 
 .section.programm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--background-color-3);
 }
 
-.timeline {
-    margin-top: calc(var(--spacing-5x) * 2);
+.section.programm > .title {
+    font-size: 4rem;
+    margin-bottom: calc(var(--spacing-5x) * 2);
 }
 
-.event {
+.section.programm > .timeline {
+    display: flex;
+    gap: calc(var(--spacing-5x) * 3);
+}
+
+.section.programm > .timeline > .event {
+    --event-background-image: none;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: var(--border-radius-5x);
+    transition: box-shadow var(--transition-1);
     background-color: var(--background-color-2);
-    padding: var(--spacing-5x);
-    margin-bottom: var(--spacing-5x);
-    border-radius: var(--border-radius-4x);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: var(--border-width-1x) solid var(--accent-light);
+    overflow: hidden;
 }
 
-.event-time {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+.section.programm > .timeline > .event:hover {
+    box-shadow: var(--spacing-1x) var(--spacing-2x) var(--spacing-4x) var(--shadow-color-1);
+}
+
+.section.programm > .timeline > .event:first-child {
+    --event-background-image: url('../images/cafedral.webp');
+}
+
+.section.programm > .timeline > .event:nth-child(2) {
+    --event-background-image: url('../images/photozone.webp');
+}
+
+.section.programm > .timeline > .event:last-child {
+    --event-background-image: url('../images/sunset.webp');
+}
+
+.section.programm > .timeline > .event .preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: linear-gradient(var(--shadow-color-2), var(--shadow-color-3)), var(--event-background-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--text-color-2);
+    box-shadow: inset 0 calc(var(--spacing-5x) * -1) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
+}
+
+.section.programm > .timeline > .event .eventTime {
+    font-size: 4rem;
     font-weight: bold;
     font-family: 'Cormorant Garamond', serif;
 }
 
+.section.programm > .timeline > .event .content {
+    padding: var(--spacing-3x) var(--spacing-5x);
+    color: var(--text-color-1);
+}
+
+.section.programm > .timeline > .event .content h3 {
+    font-size: 1.5rem;
+}
+
 /* --- ДРЕСС-КОД --- */
 
-.dressCode > .list {
+.section.dressCode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section.dressCode > .title {
+    font-size: 4rem;
+}
+
+.section.dressCode > .list {
     display: flex; 
     justify-content: center; 
     gap: var(--spacing-4x); 
-    margin-top: var(--spacing-5x);
+    margin: calc(var(--spacing-5x) * 3) 0 var(--spacing-5x) 0;
 }
 
 .dressCode > .list > .listItem {
-    --list-item-size: 40px;
+    --list-item-size: 80px;
 
     width: var(--list-item-size); 
     height: var(--list-item-size); 
@@ -172,59 +261,80 @@ h1, h2, h3 {
 /* --- ФОРМА --- */
 
 .section.form {
+    display: flex;
+    flex-direction: column;
     background: var(--background-color-2);
     padding: calc(var(--spacing-5x) * 2);
     border-radius: var(--border-radius-5x);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.section.form > .formContainer > .form {
+.section.form > .title {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-5x);
+}
+
+.section.form > .form {
+    flex: 1;
     width: 100%;
-    max-height: 100vh;
-    height: 800px;
 }
 
 /* --- ФУТЕР --- */
 
 footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--background-color-4);
     color: var(--text-color-2);
     text-align: center;
     padding: var(--spacing-5x);
-    font-size: 0.9rem;
+    font-size: 4rem;
     margin-top: calc(var(--spacing-5x) * 3);
 }
 
 footer > .text_cursive {
     color: inherit;
-    font-size: 1.5rem;
+    font-size: 5rem;
 }
 
 /* --- АДАПТИВ ДЛЯ МОБИЛОК --- */
 
 @media (1440px <= width < 1920px) {
-    .section {
-        max-width: 1200px;
-    }
+
 }
 
 @media (720px <= width < 1440px) {
-    .section {
-        max-width: 720px;
+    .section.programm > .timeline {
+        gap: var(--spacing-5x);
+    }
+
+    .section.programm > .timeline > .event .preview {
+        height: 400px;
     }
 }
 
 @media (width < 720px) {
-    .section {
-        max-width: 100%;
-    }
-
     .hero h1 { 
         font-size: 2.5rem; 
     }
 
     .coupleNames { 
         font-size: 2rem; 
+    }
+
+    .section.programm > .timeline {
+        flex-direction: column;
+    }
+
+    .dressCode > .list {
+        flex-direction: column;
+    }
+
+    .dressCode > .list > .listItem {
+        --list-item-size: 90px;
     }
 
     .section.form { 

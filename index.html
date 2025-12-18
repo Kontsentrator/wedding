@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap">
 
+    <!-- Подключаем стили сайта -->
     <link rel="stylesheet" href="assets/styles/styles.css">
 
     <script>
@@ -34,65 +35,75 @@
     </section>
 
     <!-- ПРИГЛАШЕНИЕ -->
-    <section class="section">
-        <h2 class="coupleNames text_cursive">Дорогие друзья и родные!</h2>
-        <p>Мы будем рады разделить с вами этот особенный день.</p>
-        <p>Пожалуйста, отложите все дела и присоединяйтесь к нашему празднику любви!</p>
+    <section class="section invitation">
+        <h2 class="coupleNames text_cursive title">Дорогие друзья и родные!</h2>
+        <p>
+            Мы будем рады разделить с вами этот особенный день.<br />
+            Пожалуйста, отложите все дела и присоединяйтесь к нашему празднику любви!
+        </p>
         <div class="divider"></div>
     </section>
 
     <!-- ПРОГРАММА -->
     <section class="section programm">
-        <h2>Программа дня</h2>
+        <h2 class="title">Программа дня</h2>
         <div class="timeline">
-            <div class="event">
-                <div class="event-time">12:00-13:00</div>
-                <h3>Торжественная церемония венчания</h3>
-                <p>Спасо-Вознесенский кафедральный собор</p>
-                <a class="link_hidden" href="https://yandex.ru/maps/-/CLwCfXJq" target="_blank" rel="noreferrer nofollower">
+            <a class="event" href="https://yandex.ru/maps/-/CLwCfXJq" target="_blank" rel="noreferrer nofollower">
+                <div class="preview">
+                    <div class="eventTime">12:00-13:00</div>
+                </div>
+                <div class="content">
+                    <h3>Торжественная церемония венчания</h3>
+                    <div class="divider"></div>
+                    <p>Спасо-Вознесенский кафедральный собор</p>
                     <small>Ульяновская ул., 2Б</small>
-                </a>
-            </div>
-            <div class="event">
-                <div class="event-time">15:00</div>
-                <h3>Фотосессия</h3>
-                <p>Ресторан «Роза Ветров»</p>
-                <a class="link_hidden" href="https://yandex.ru/maps/-/CLwCvY3K" target="_blank" rel="noreferrer nofollower">
+                </div>
+            </a>
+            <a class="event" href="https://yandex.ru/maps/-/CLwCvY3K" target="_blank" rel="noreferrer nofollower">
+                <div class="preview">
+                    <div class="eventTime">15:00</div>
+                </div>
+                <div class="content">
+                    <h3>Фотосессия</h3>
+                    <div class="divider"></div>
+                    <p>Ресторан «Роза Ветров»</p>
                     <small>посёлок Рыбацкий, 1 · набережная реки Волга</small>
-                </a>
-            </div>
-            <div class="event">
-                <div class="event-time">16:00</div>
-                <h3>Праздничный банкет</h3>
-                <p>Ресторан «Роза Ветров»</p>
-                <a class="link_hidden" href="https://yandex.ru/maps/-/CLwCvY3K" target="_blank" rel="noreferrer nofollower">
+                </div>
+            </a>
+            <a class="event" href="https://yandex.ru/maps/-/CLwCvY3K" target="_blank" rel="noreferrer nofollower">
+                <div class="preview">
+                    <div class="eventTime">16:00</div>
+                </div>
+                <div class="content">
+                    <h3>Праздничный банкет</h3>
+                    <div class="divider"></div>
+                    <p>Ресторан «Роза Ветров»</p>
                     <small>посёлок Рыбацкий, 1 · набережная реки Волга</small>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- ДРЕСС-КОД -->
     <section class="section dressCode">
-        <h2>Дресс-код</h2>
+        <h2  class="title">Дресс-код</h2>
         <p>Будем признательны, если вы поддержите цветовую гамму нашей свадьбы:</p>
         <div class="list">
             <div class="listItem" style="background-color: var(--dress-code-color-1);"></div>
             <div class="listItem" style="background-color: var(--dress-code-color-2);"></div>
             <div class="listItem" style="background-color: var(--dress-code-color-3);"></div>
             <div class="listItem" style="background-color: var(--dress-code-color-4);"></div>
+            <div class="listItem" style="background-color: var(--dress-code-color-5); border: var(--border-width-1x) solid var(--border-color-1);"></div>
         </div>
-        <p style="margin-top: 15px; font-size: 0.9rem;">Pastel & Cocktail</p>
+        <p>Pastel & Cocktail</p>
     </section>
 
     <!-- ФОРМА -->
     <section class="section form">
-        <h2 style="margin-bottom: 20px;">Подтвердите присутствие</h2>
+        <h2 class="title">Подтвердите присутствие</h2>
         <p style="margin-bottom: 30px;">Пожалуйста, заполните форму до 1 февраля</p>
         
-        <div class="formContainer">
-	        <iframe class="form" src="https://docs.google.com/forms/d/e/1FAIpQLScmMdlpqMNOCKEuOLanLtKKcJ-_xqGBmJrOBwmBmFkIYfwOCA/viewform?embedded=true" frameborder="0">Загрузка…</iframe>
-        </div>
+	    <iframe class="form" src="https://docs.google.com/forms/d/e/1FAIpQLScmMdlpqMNOCKEuOLanLtKKcJ-_xqGBmJrOBwmBmFkIYfwOCA/viewform?embedded=true" frameborder="0">Загрузка…</iframe>
     </section>
 
     <!-- ФУТЕР -->

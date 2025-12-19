@@ -8,11 +8,6 @@
     --text-color-3: #b08e85;
     --border-color-1: #b08e85;
     --border-color-2: #fff;
-    --dress-code-color-1: #755c7c;
-    --dress-code-color-2: #b49bbb;
-    --dress-code-color-3: #8aac91;
-    --dress-code-color-4: #fcc9c6;
-    --dress-code-color-5: #ffede9;
     --shadow-color-1: rgba(0, 0, 0, 0.2);
     --shadow-color-2: rgba(0, 0, 0, 0.3);
     --shadow-color-3: rgba(0, 0, 0, 0.5);
@@ -56,7 +51,9 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
 }
@@ -87,23 +84,23 @@ h1, h2, h3 {
     padding: var(--spacing-5x);
 }
 
-.hero > .text_cursive {
+.hero>.text_cursive {
     font-size: 2rem;
     color: inherit;
 }
 
-.hero > h1 {
+.hero>h1 {
     font-size: 4rem;
     text-shadow: var(--spacing-05x) var(--spacing-05x) var(--spacing-1x) var(--shadow-color-2);
 }
 
-.hero > p {
+.hero>p {
     font-size: 1.5rem;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-.hero > .date {
+.hero>.date {
     margin-top: calc(var(--spacing-5x) * 1.5);
     border: var(--border-width-1x) solid var(--border-color-2);
     padding: calc(var(--spacing-5x) / 2) calc(var(--spacing-5x) * 1.5);
@@ -143,12 +140,12 @@ h1, h2, h3 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow: 
+    box-shadow:
         inset 0 var(--spacing-5x) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3),
         inset 0 calc(var(--spacing-5x) * -1) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
 }
 
-.section.invitation > .title {
+.section.invitation>.title {
     font-size: 4rem;
     color: var(--text-color-3);
 }
@@ -163,17 +160,17 @@ h1, h2, h3 {
     background-color: var(--background-color-3);
 }
 
-.section.programm > .title {
+.section.programm>.title {
     font-size: 4rem;
     margin-bottom: calc(var(--spacing-5x) * 2);
 }
 
-.section.programm > .timeline {
+.section.programm>.timeline {
     display: flex;
     gap: calc(var(--spacing-5x) * 3);
 }
 
-.section.programm > .timeline > .event {
+.section.programm>.timeline>.event {
     --event-background-image: none;
 
     flex: 1;
@@ -186,23 +183,11 @@ h1, h2, h3 {
     overflow: hidden;
 }
 
-.section.programm > .timeline > .event:hover {
+.section.programm>.timeline>.event:hover {
     box-shadow: var(--spacing-1x) var(--spacing-2x) var(--spacing-4x) var(--shadow-color-1);
 }
 
-.section.programm > .timeline > .event:first-child {
-    --event-background-image: url('../images/cafedral.webp');
-}
-
-.section.programm > .timeline > .event:nth-child(2) {
-    --event-background-image: url('../images/photozone.webp');
-}
-
-.section.programm > .timeline > .event:last-child {
-    --event-background-image: url('../images/sunset.webp');
-}
-
-.section.programm > .timeline > .event .preview {
+.section.programm>.timeline>.event .preview {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,47 +200,57 @@ h1, h2, h3 {
     box-shadow: inset 0 calc(var(--spacing-5x) * -1) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
 }
 
-.section.programm > .timeline > .event .eventTime {
+.section.programm>.timeline>.event .eventTime {
     font-size: 4rem;
     font-weight: bold;
     font-family: 'Cormorant Garamond', serif;
 }
 
-.section.programm > .timeline > .event .content {
+.section.programm>.timeline>.event .content {
     padding: var(--spacing-3x) var(--spacing-5x);
     color: var(--text-color-1);
 }
 
-.section.programm > .timeline > .event .content h3 {
+.section.programm>.timeline>.event .content h3 {
     font-size: 1.5rem;
 }
 
 /* --- ДРЕСС-КОД --- */
 
 .section.dressCode {
+    --section-background-color: var(--background-color-1);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7)),
+        var(--section-background-color, rgba(255, 255, 255, 0));
+    transition: background-color var(--transition-1) ease, --current-color var(--transition-1) ease;
 }
 
-.section.dressCode > .title {
+.section.dressCode>.title {
     font-size: 4rem;
 }
 
-.section.dressCode > .list {
-    display: flex; 
-    justify-content: center; 
-    gap: var(--spacing-4x); 
+.section.dressCode>.list {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4x);
     margin: calc(var(--spacing-5x) * 3) 0 var(--spacing-5x) 0;
 }
 
-.dressCode > .list > .listItem {
+.dressCode>.list>.listItem {
     --list-item-size: 80px;
 
-    width: var(--list-item-size); 
-    height: var(--list-item-size); 
+    width: var(--list-item-size);
+    height: var(--list-item-size);
     border-radius: var(--border-radius-full);
+    transition: transform var(--transition-1) ease-out;
+}
+
+.dressCode>.list>.listItem:hover {
+    transform: scale(1.2);
 }
 
 /* --- ФОРМА --- */
@@ -265,18 +260,19 @@ h1, h2, h3 {
     flex-direction: column;
     background: var(--background-color-2);
     padding: calc(var(--spacing-5x) * 2);
-    border-radius: var(--border-radius-5x);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: calc(var(--border-radius-5x) * 2);
+    box-shadow: 0 calc(var(--spacing-2x) * -1) var(--spacing-4x) var(--shadow-color-1);
 }
 
-.section.form > .title {
+.section.form>.title {
     font-size: 3rem;
     margin-bottom: var(--spacing-5x);
 }
 
-.section.form > .form {
+.section.form>.form {
     flex: 1;
     width: 100%;
+    margin-top: var(--spacing-5x);
 }
 
 /* --- ФУТЕР --- */
@@ -288,56 +284,57 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: var(--background-color-4);
+    background: linear-gradient(var(--shadow-color-3), var(--shadow-color-3)), url('../images/flowers.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--text-color-2);
     text-align: center;
     padding: var(--spacing-5x);
     font-size: 4rem;
-    margin-top: calc(var(--spacing-5x) * 3);
 }
 
-footer > .text_cursive {
+footer>.text_cursive {
     color: inherit;
     font-size: 5rem;
 }
 
 /* --- АДАПТИВ ДЛЯ МОБИЛОК --- */
 
-@media (1440px <= width < 1920px) {
+@media (1440px <=width < 1920px) {}
 
-}
-
-@media (720px <= width < 1440px) {
-    .section.programm > .timeline {
+@media (720px <=width < 1440px) {
+    .section.programm>.timeline {
         gap: var(--spacing-5x);
     }
 
-    .section.programm > .timeline > .event .preview {
+    .section.programm>.timeline>.event .preview {
         height: 400px;
     }
 }
 
 @media (width < 720px) {
-    .hero h1 { 
-        font-size: 2.5rem; 
+    .hero h1 {
+        font-size: 2.5rem;
     }
 
-    .coupleNames { 
-        font-size: 2rem; 
+    .coupleNames {
+        font-size: 2rem;
     }
 
-    .section.programm > .timeline {
+    .section.programm>.timeline {
         flex-direction: column;
     }
 
-    .dressCode > .list {
+    .dressCode>.list {
         flex-direction: column;
     }
 
-    .dressCode > .list > .listItem {
+    .dressCode>.list>.listItem {
         --list-item-size: 90px;
     }
 
-    .section.form { 
-        padding: var(--spacing-5x); 
+    .section.form {
+        padding: var(--spacing-5x);
     }
 }

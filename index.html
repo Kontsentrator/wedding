@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +12,21 @@
     <meta property="og:image" content="https://kontsentrator.github.io/wedding/assets/images/openGraphPreview.png">
     <meta property="og:url" content="https://kontsentrator.github.io/wedding">
     <meta property="og:type" content="website">
-    
+
     <!-- Подключаем красивые шрифты от Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap">
 
     <!-- Подключаем стили сайта -->
     <link rel="stylesheet" href="assets/styles/styles.css">
     <script defer src="./scripts.js"></script>
 </head>
+
 <body>
     <!-- ГЛАВНЫЙ БЛОК -->
     <section class="hero">
         <div class="text_cursive">Save the Date</div>
-        <h1>Дмитрий & Анастасия</h1> 
+        <h1>Дмитрий & Анастасия</h1>
         <div class="date">
             7 июня 2026
         </div>
@@ -38,7 +39,12 @@
             Мы будем рады разделить с вами этот особенный день.<br />
             Пожалуйста, отложите все дела и присоединяйтесь к нашему празднику любви!
         </p>
-        <div class="divider"></div>
+        <div id="calendarContainer" class="calendarContainer">
+            <div class="monthLabel">Июнь</div>
+            <div class="calendar">
+                <!-- Загрузка календаря выполняется в скрипте -->
+            </div>
+        </div>
     </section>
 
     <!-- ПРОГРАММА -->
@@ -51,7 +57,7 @@
 
     <!-- ДРЕСС-КОД -->
     <section class="section dressCode">
-        <h2  class="title">Дресс-код</h2>
+        <h2 class="title">Дресс-код</h2>
         <p>Будем признательны, если вы поддержите цветовую гамму нашей свадьбы:</p>
         <div class="list">
             <!-- Загрузка списка выполняется в скрипте -->
@@ -63,7 +69,9 @@
     <section class="section form">
         <h2 class="title">Подтвердите присутствие</h2>
         <p>Пожалуйста, заполните форму до 1 февраля</p>
-	    <iframe class="form" src="https://docs.google.com/forms/d/e/1FAIpQLScmMdlpqMNOCKEuOLanLtKKcJ-_xqGBmJrOBwmBmFkIYfwOCA/viewform?embedded=true" frameborder="0">Загрузка…</iframe>
+        <iframe class="form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLScmMdlpqMNOCKEuOLanLtKKcJ-_xqGBmJrOBwmBmFkIYfwOCA/viewform?embedded=true"
+            frameborder="0">Загрузка…</iframe>
     </section>
 
     <!-- ФУТЕР -->
@@ -72,4 +80,5 @@
         <p class="text_cursive">Ждут вас!</p>
     </footer>
 </body>
+
 </html>

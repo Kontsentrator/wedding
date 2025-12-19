@@ -1,5 +1,44 @@
 console.log('А зачем ты сюда залез?');
 
+/* --- ПРИГЛАШЕНИЕ --- */
+
+const WEEK_DAYS = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+const DAYS_IN_MONTH = 31;
+const START_DAY_INDEX = 0;
+const WEDDING_DATE = 7;
+
+const renderCalendar = () => {
+    const calendarContainer = document.getElementById('calendarContainer');
+    if (!calendarContainer) return;
+
+    const calendar = calendarContainer.querySelector('.calendar');
+    if (!calendar) return;
+
+    // Добавляем заголовки дней недели
+    WEEK_DAYS.forEach((weekDay) => {
+        const weekDayElement = document.createElement('div');
+        weekDayElement.className = 'weekDay';
+        weekDayElement.innerText = weekDay;
+        calendar.appendChild(weekDayElement);
+    });
+
+    // 3. Добавляем числа месяца
+    for (let day = 1; day <= DAYS_IN_MONTH; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'day';
+        dayElement.innerText = day;
+        if (START_DAY_INDEX && day === 1) {
+            dayElement.style.gridColumnStart = START_DAY_INDEX + 1;
+        }
+
+        if (day === WEDDING_DATE) {
+            dayElement.classList.add('day_special');
+        }
+
+        calendar.appendChild(dayElement);
+    }
+};
+
 /* --- ПРОГРАММА --- */
 
 const PROGRAMM_EVENTS = [
@@ -26,7 +65,7 @@ const renderProgrammEvents = () => {
         const previewElement = document.createElement('div');
         previewElement.className = 'preview';
         eventElement.appendChild(previewElement);
-        
+
         const eventTimeElement = document.createElement('div');
         eventTimeElement.className = 'eventTime';
         eventTimeElement.textContent = event.time;
@@ -59,10 +98,10 @@ const renderProgrammEvents = () => {
 /* --- ДРЕСС-КОД --- */
 
 const DRESS_CODE_COLORS = [
-    { code: '#b49bbb' }, 
-    { code: '#fcc9c6' }, 
-    { code: '#ffede9', withBorder: true }, 
-    { code: '#ceecff' }, 
+    { code: '#b49bbb' },
+    { code: '#fcc9c6' },
+    { code: '#ffede9', withBorder: true },
+    { code: '#ceecff' },
     { code: '#b4d3bb' }
 ];
 
@@ -86,7 +125,7 @@ const renderDressCodeList = () => {
         });
 
         listItem.addEventListener('mouseleave', () => {
-            dressCodeSection.style.setProperty('--section-background-color', 'transparent');
+            dressCodeSection.style.setProperty('--section-background-color', null);
         });
 
         list.appendChild(listItem);
@@ -94,6 +133,7 @@ const renderDressCodeList = () => {
 };
 
 const handleDOMContentLoaded = () => {
+    renderCalendar();
     renderProgrammEvents();
     renderDressCodeList();
 };

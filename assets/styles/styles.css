@@ -35,6 +35,8 @@
     --breakpoint-2xs: 360px;
 
     --transition-1: 300ms;
+
+    --overlap-size: calc(var(--spacing-3x) * 2);
 }
 
 * {
@@ -60,11 +62,6 @@ h3 {
 
 .text_cursive {
     font-family: 'Great Vibes', cursive;
-}
-
-.link_hidden {
-    text-decoration: none;
-    color: inherit;
 }
 
 /* --- ГЛАВНЫЙ ЭКРАН --- */
@@ -140,14 +137,60 @@ h3 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow:
-        inset 0 var(--spacing-5x) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3),
-        inset 0 calc(var(--spacing-5x) * -1) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
+    box-shadow: inset 0 var(--spacing-5x) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
 }
 
 .section.invitation>.title {
     font-size: 4rem;
     color: var(--text-color-3);
+}
+
+.calendarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5x);
+    margin-top: calc(var(--spacing-5x) * 4);
+}
+
+.calendarContainer>.monthLabel {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.calendarContainer>.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-4x);
+}
+
+.calendarContainer>.calendar>.weekDay {
+    text-transform: uppercase;
+    color: var(--text-color-3);
+}
+
+.calendarContainer>.calendar>.day {
+    position: relative;
+}
+
+.calendarContainer>.calendar>.day_special::before {
+    --day-frame-size: 42px;
+
+    content: '';
+    position: absolute;
+    inset: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+    width: var(--day-frame-size);
+    height: var(--day-frame-size);
+    background-image: url('../icons/heart.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: width var(--transition-1), height var(--transition-1);
+}
+
+.calendarContainer>.calendar>.day_special:hover::before {
+    --day-frame-size: 50px;
 }
 
 /* --- ПРОГРАММА ДНЯ --- */
@@ -158,6 +201,10 @@ h3 {
     align-items: center;
     justify-content: center;
     background-color: var(--background-color-3);
+    border-radius: var(--border-radius-5x) var(--border-radius-5x) 0 0;
+    box-shadow: 0 calc(var(--spacing-2x) * -1) var(--spacing-4x) var(--shadow-color-1);
+    padding-top: calc(100px + var(--overlap-size));
+    margin-top: calc(var(--overlap-size) * -1);
 }
 
 .section.programm>.title {
@@ -260,7 +307,9 @@ h3 {
     flex-direction: column;
     background: var(--background-color-2);
     padding: calc(var(--spacing-5x) * 2);
-    border-radius: calc(var(--border-radius-5x) * 2);
+    padding-top: calc(var(--spacing-5x) * 2 + var(--overlap-size));
+    margin-top: calc(var(--overlap-size) * -1);
+    border-radius: var(--border-radius-5x) var(--border-radius-5x) 0 0;
     box-shadow: 0 calc(var(--spacing-2x) * -1) var(--spacing-4x) var(--shadow-color-1);
 }
 
@@ -320,6 +369,14 @@ footer>.text_cursive {
 
     .coupleNames {
         font-size: 2rem;
+    }
+
+    .section.invitation {
+        padding: calc(var(--spacing-5x) * 10) var(--spacing-5x);
+    }
+
+    .calendarContainer>.calendar {
+        gap: var(--spacing-2x);
     }
 
     .section.programm>.timeline {

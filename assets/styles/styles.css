@@ -74,7 +74,7 @@ h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(var(--shadow-color-1), var(--shadow-color-1)), url('../images/hero.jpg');
+    background: linear-gradient(var(--shadow-color-1), var(--shadow-color-1)), url('../images/flowers.webp');
     background-size: cover;
     background-position: center;
     color: var(--text-color-2);
@@ -346,6 +346,16 @@ footer {
 footer>.text_cursive {
     color: inherit;
     font-size: 5rem;
+}
+
+.easter {
+    padding: calc(var(--spacing-5x) * 4) 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-color-2);
+    background: linear-gradient(var(--shadow-color-2), var(--shadow-color-3)), url('../images/hero.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 /* --- АДАПТИВ ДЛЯ МОБИЛОК --- */

@@ -2,7 +2,7 @@ const renderEasters = () => {
     let isScrolledEnd = false;
     let isEasterSwown = false;
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         if (isEasterSwown) return;
 
         if (!isScrolledEnd) {
@@ -15,7 +15,10 @@ const renderEasters = () => {
         easterElement.textContent = 'Всё, дальше некуда, пора собираться на свадьбу!';
         document.body.appendChild(easterElement);
         isEasterSwown = true;
-    });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
 };
 
 document.addEventListener('DOMContentLoaded', renderEasters);

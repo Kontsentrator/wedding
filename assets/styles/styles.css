@@ -1,0 +1,415 @@
+@import url('./fonts.css');
+
+:root {
+    --background-color-1: #faf7f2;
+    --background-color-2: #fff;
+    --background-color-3: #f2efe9;
+    --background-color-4: #b08e85;
+    --text-color-1: #4a4a4a;
+    --text-color-2: #fff;
+    --text-color-3: #b08e85;
+    --border-color-1: #b08e85;
+    --border-color-2: #fff;
+    --shadow-color-1: rgba(0, 0, 0, 0.2);
+    --shadow-color-2: rgba(0, 0, 0, 0.3);
+    --shadow-color-3: rgba(0, 0, 0, 0.5);
+
+    --spacing-05x: 2px;
+    --spacing-1x: 4px;
+    --spacing-2x: 8px;
+    --spacing-3x: 12px;
+    --spacing-4x: 16px;
+    --spacing-5x: 20px;
+
+    --border-width-1x: 1px;
+
+    --border-radius-1x: 4px;
+    --border-radius-2x: 8px;
+    --border-radius-4x: 16px;
+    --border-radius-5x: 20px;
+    --border-radius-full: 9999px;
+
+    --breakpoint-xl: 1920px;
+    --breakpoint-l: 1600px;
+    --breakpoint-m: 1440px;
+    --breakpoint-s: 1200px;
+    --breakpoint-xs: 720px;
+    --breakpoint-2xs: 360px;
+
+    --transition-1: 300ms;
+
+    --overlap-size: calc(var(--spacing-3x) * 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color-1);
+    color: var(--text-color-1);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+.text_cursive {
+    font-family: 'AnastasiaScriptC', cursive;
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН --- */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-5x) / 2);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(var(--shadow-color-1), var(--shadow-color-1)), url('../images/couple1.webp');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color-2);
+    padding: var(--spacing-5x);
+}
+
+.hero>.text_cursive {
+    font-size: 2rem;
+    color: inherit;
+}
+
+.hero>h1 {
+    font-size: 4rem;
+    text-shadow: var(--spacing-05x) var(--spacing-05x) var(--spacing-1x) var(--shadow-color-2);
+}
+
+.hero>p {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero>.date {
+    margin-top: calc(var(--spacing-5x) * 1.5);
+    border: var(--border-width-1x) solid var(--border-color-2);
+    padding: calc(var(--spacing-5x) / 2) calc(var(--spacing-5x) * 1.5);
+    font-size: 1.2rem;
+    backdrop-filter: blur(6px);
+}
+
+/* --- СЕКЦИИ --- */
+
+.section {
+    min-height: 100vh;
+    padding: calc(var(--spacing-5x) * 4) var(--spacing-5x);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coupleNames {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-5x);
+}
+
+.divider {
+    width: 100px;
+    height: 2px;
+    background-color: var(--border-color-1);
+    margin: var(--spacing-3x) auto;
+}
+
+/* --- ПРИГЛАШЕНИЕ --- */
+
+.section.invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/flowersFrame.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 var(--spacing-5x) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
+}
+
+.section.invitation>.title {
+    font-size: 4rem;
+    font-weight: normal;
+    color: var(--text-color-3);
+}
+
+.calendarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5x);
+    margin-top: calc(var(--spacing-5x) * 4);
+}
+
+.calendarContainer>.monthLabel {
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.calendarContainer>.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-4x);
+}
+
+.calendarContainer>.calendar>.weekDay {
+    text-transform: uppercase;
+    color: var(--text-color-3);
+}
+
+.calendarContainer>.calendar>.day {
+    position: relative;
+}
+
+.calendarContainer>.calendar>.day_special::before {
+    --day-frame-size: 42px;
+
+    content: '';
+    position: absolute;
+    inset: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+    width: var(--day-frame-size);
+    height: var(--day-frame-size);
+    background-image: url('../icons/heart.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: width var(--transition-1), height var(--transition-1);
+}
+
+.calendarContainer>.calendar>.day_special:hover::before {
+    --day-frame-size: 50px;
+}
+
+/* --- ПРОГРАММА ДНЯ --- */
+
+.section.programm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-3);
+    border-radius: var(--border-radius-5x) var(--border-radius-5x) 0 0;
+    box-shadow: 0 calc(var(--spacing-2x) * -1) var(--spacing-4x) var(--shadow-color-1);
+    padding-top: calc(100px + var(--overlap-size));
+    margin-top: calc(var(--overlap-size) * -1);
+}
+
+.section.programm>.title {
+    font-size: 4rem;
+    margin-bottom: calc(var(--spacing-5x) * 2);
+}
+
+.section.programm>.timeline {
+    display: flex;
+    gap: calc(var(--spacing-5x) * 3);
+}
+
+.section.programm>.timeline>.event {
+    --event-background-image: none;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: var(--border-radius-5x);
+    transition: box-shadow var(--transition-1);
+    background-color: var(--background-color-2);
+    overflow: hidden;
+}
+
+.section.programm>.timeline>.event:hover {
+    box-shadow: var(--spacing-1x) var(--spacing-2x) var(--spacing-4x) var(--shadow-color-1);
+}
+
+.section.programm>.timeline>.event .preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: linear-gradient(var(--shadow-color-2), var(--shadow-color-3)), var(--event-background-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--text-color-2);
+    box-shadow: inset 0 calc(var(--spacing-5x) * -1) var(--spacing-5x) calc(var(--spacing-4x) * -1) var(--shadow-color-3);
+}
+
+.section.programm>.timeline>.event .eventTime {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.section.programm>.timeline>.event .content {
+    padding: var(--spacing-3x) var(--spacing-5x);
+    color: var(--text-color-1);
+}
+
+.section.programm>.timeline>.event .content h3 {
+    font-size: 1.5rem;
+}
+
+/* --- ДРЕСС-КОД --- */
+
+.section.dressCode {
+    --section-background-color: var(--background-color-1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7)),
+        var(--section-background-color, rgba(255, 255, 255, 0));
+    transition: background-color var(--transition-1) ease, --current-color var(--transition-1) ease;
+}
+
+.section.dressCode>.title {
+    font-size: 4rem;
+}
+
+.section.dressCode>.list {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4x);
+    margin: var(--spacing-5x) 0 calc(var(--spacing-5x) * 3) 0;
+}
+
+.dressCode>.list>.listItem {
+    --list-item-size: 80px;
+
+    width: var(--list-item-size);
+    height: var(--list-item-size);
+    border-radius: var(--border-radius-full);
+    transition: transform var(--transition-1) ease-out;
+}
+
+.dressCode>.list>.listItem:hover {
+    transform: scale(1.2);
+}
+
+.dressCode>.explanation {
+    font-size: 1rem;
+}
+
+/* --- ФОРМА --- */
+
+.section.form {
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color-2);
+    padding: calc(var(--spacing-5x) * 2);
+    padding-top: calc(var(--spacing-5x) * 2 + var(--overlap-size));
+    margin-top: calc(var(--overlap-size) * -1);
+    border-radius: var(--border-radius-5x) var(--border-radius-5x) 0 0;
+    box-shadow: 0 calc(var(--spacing-2x) * -1) var(--spacing-4x) var(--shadow-color-1);
+}
+
+.section.form>.title {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-5x);
+}
+
+.section.form>.form {
+    flex: 1;
+    width: 100%;
+    margin-top: var(--spacing-5x);
+}
+
+/* --- ФУТЕР --- */
+
+footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-4);
+    background: linear-gradient(var(--shadow-color-3), var(--shadow-color-3)), url('../images/flowers.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-color-2);
+    text-align: center;
+    padding: var(--spacing-5x);
+    font-size: 4rem;
+}
+
+footer>.text_cursive {
+    font-family: 'AnastasiaScriptC';
+    color: inherit;
+    font-size: 5rem;
+}
+
+.easter {
+    padding: calc(var(--spacing-5x) * 4) 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-color-2);
+    background: linear-gradient(var(--shadow-color-2), var(--shadow-color-3)), url('../images/couple2.webp');
+    background-position: center;
+    background-size: contain;
+}
+
+/* --- АДАПТИВ ДЛЯ МОБИЛОК --- */
+
+@media (1440px <=width < 1920px) {}
+
+@media (720px <=width < 1440px) {
+    .section.programm>.timeline {
+        gap: var(--spacing-5x);
+    }
+
+    .section.programm>.timeline>.event .preview {
+        height: 400px;
+    }
+}
+
+@media (width < 720px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .coupleNames {
+        font-size: 2rem;
+    }
+
+    .section.invitation {
+        padding: calc(var(--spacing-5x) * 10) var(--spacing-5x);
+    }
+
+    .calendarContainer>.calendar {
+        gap: var(--spacing-2x);
+    }
+
+    .section.programm>.timeline {
+        flex-direction: column;
+    }
+
+    .dressCode>.list {
+        flex-direction: column;
+    }
+
+    .dressCode>.list>.listItem {
+        --list-item-size: 90px;
+    }
+
+    .section.form {
+        padding: var(--spacing-5x);
+    }
+}

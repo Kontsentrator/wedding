@@ -6,7 +6,7 @@ const renderEasters = () => {
         if (isEasterSwown) return;
 
         if (!isScrolledEnd) {
-            isScrolledEnd = document.body.scrollHeight === window.scrollY + window.innerHeight;
+            isScrolledEnd = document.body.scrollHeight === Math.ceil(window.scrollY + window.innerHeight);
             return;
         }
 

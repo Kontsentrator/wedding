@@ -42,8 +42,8 @@ const renderCalendar = () => {
 /* --- ПРОГРАММА --- */
 
 const PROGRAMM_EVENTS = [
-    { time: '12:00-13:00', title: 'Торжественная церемония венчания', location: 'Спасо-Вознесенский кафедральный собор', address: 'Ульяновская ул., 2Б', href: 'https://yandex.ru/maps/-/CLwCfXJq', imageUrl: '../images/cafedral.webp' },
-    { time: '15:00', title: 'Фотосессия', location: 'Ресторан «Роза Ветров»', address: 'посёлок Рыбацкий, 1 · набережная реки Волга', href: 'https://yandex.ru/maps/-/CLwCvY3K', imageUrl: '../images/photozone.webp' },
+    { time: '12:00-13:00', title: 'Торжественная церемония венчания (посещение по желанию)', location: 'Спасо-Вознесенский кафедральный собор', address: 'Ульяновская ул., 2Б', href: 'https://yandex.ru/maps/-/CLwCfXJq', imageUrl: '../images/cafedral.webp' },
+    { time: '15:30', title: 'Сбор гостей', location: 'Ресторан «Роза Ветров»', address: 'посёлок Рыбацкий, 1 · набережная реки Волга', href: 'https://yandex.ru/maps/-/CLwCvY3K', imageUrl: '../images/photozone.webp' },
     { time: '16:00', title: 'Праздничный банкет', location: 'Ресторан «Роза Ветров»', address: 'посёлок Рыбацкий, 1 · набережная реки Волга', href: 'https://yandex.ru/maps/-/CLwCvY3K', imageUrl: '../images/sunset.webp' },
 ];
 
@@ -100,9 +100,9 @@ const renderProgrammEvents = () => {
 const DRESS_CODE_COLORS = [
     { code: '#b49bbb' },
     { code: '#fcc9c6' },
-    { code: '#ffede9', withBorder: true },
+    { code: '#ffead2', withBorder: true },
     { code: '#ceecff' },
-    { code: '#b4d3bb' }
+    { code: '#c9ebd1' }
 ];
 
 const renderDressCodeList = () => {

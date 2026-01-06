@@ -1,3 +1,5 @@
+@import url('./fonts.css');
+
 :root {
     --background-color-1: #faf7f2;
     --background-color-2: #fff;
@@ -61,7 +63,7 @@ h3 {
 }
 
 .text_cursive {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'AnastasiaScriptC', cursive;
 }
 
 /* --- ГЛАВНЫЙ ЭКРАН --- */
@@ -74,7 +76,7 @@ h3 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(var(--shadow-color-1), var(--shadow-color-1)), url('../images/flowers.webp');
+    background: linear-gradient(var(--shadow-color-1), var(--shadow-color-1)), url('../images/couple1.webp');
     background-size: cover;
     background-position: center;
     color: var(--text-color-2);
@@ -142,6 +144,7 @@ h3 {
 
 .section.invitation>.title {
     font-size: 4rem;
+    font-weight: normal;
     color: var(--text-color-3);
 }
 
@@ -284,7 +287,7 @@ h3 {
     display: flex;
     justify-content: center;
     gap: var(--spacing-4x);
-    margin: calc(var(--spacing-5x) * 3) 0 var(--spacing-5x) 0;
+    margin: var(--spacing-5x) 0 calc(var(--spacing-5x) * 3) 0;
 }
 
 .dressCode>.list>.listItem {
@@ -298,6 +301,10 @@ h3 {
 
 .dressCode>.list>.listItem:hover {
     transform: scale(1.2);
+}
+
+.dressCode>.explanation {
+    font-size: 1rem;
 }
 
 /* --- ФОРМА --- */
@@ -344,6 +351,7 @@ footer {
 }
 
 footer>.text_cursive {
+    font-family: 'AnastasiaScriptC';
     color: inherit;
     font-size: 5rem;
 }
@@ -353,9 +361,9 @@ footer>.text_cursive {
     font-size: 1.5rem;
     text-align: center;
     color: var(--text-color-2);
-    background: linear-gradient(var(--shadow-color-2), var(--shadow-color-3)), url('../images/hero.jpg');
+    background: linear-gradient(var(--shadow-color-2), var(--shadow-color-3)), url('../images/couple2.webp');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 /* --- АДАПТИВ ДЛЯ МОБИЛОК --- */
